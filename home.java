@@ -40,21 +40,23 @@ public class home {
         //design for the close button
         closeButton.setBackground(Color.white);
         closeButton.setForeground(Color.BLACK);
+
         //logic for our close button
         closeButton.addActionListener(e -> frame.dispose() ); //(frame) here is the main JFrame we created 
 
         //In this section we will place the components we just created using a BorderLayout
         //So far we craeted two components which is a tiitle bar and a close button
-        TittleBar.add(appName,BorderLayout.WEST);
+        //title bar = lalagyan sa taas 
+
+        //config for tittle bar custom window 
+        TittleBar.add(appName,BorderLayout.CENTER);
+        TittleBar.add(closeButton, BorderLayout.LINE_END);
         
 
         //visibility logic
-         mainPanel.add(TittleBar, BorderLayout.NORTH); // add the tittle bar to the main panel at the top (NORTH)
-         TittleBar.add(closeButton, BorderLayout.EAST);
-         TittleBar.add(appName, BorderLayout.WEST);
+         mainPanel.add(TittleBar, BorderLayout.PAGE_START); // add the tittle bar to the main panel at the top (NORTH)
          frame.setContentPane(mainPanel); //this line is very important so we can see the main panel
          frame.setVisible(true); // this is best to be in last part of the frame so we can make sure other methods will work
 
-    }
-    
+    }   
 }
